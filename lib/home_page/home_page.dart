@@ -1,6 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:voice_assistant/feature_box.dart';
 import 'package:voice_assistant/pallet/pallete.dart';
@@ -145,7 +144,15 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          if (await speechToText.hasPermission && speechToText.isNotListening) {
+            startListening();
+          } else if (speechToText.isListening) {
+            stopListening();
+          } else {
+            initSpeechToText();
+          }
+        },
         child: Icon(Icons.mic),
       ),
     );

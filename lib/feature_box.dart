@@ -28,7 +28,7 @@ class FeatureBox extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: Text(
                 headerText,
-                style: TextStyle(
+                style: TextStyle( 
                     fontFamily: 'Cera Pro',
                     color: Pallete.blackColor,
                     fontSize: 18,
