@@ -85,7 +85,7 @@ class OpenAIService {
   }
 
   Future<String> dallEAPI(String prompt) async {
-     messages.add({
+    messages.add({
       'role': 'user',
       'content': prompt,
     });
